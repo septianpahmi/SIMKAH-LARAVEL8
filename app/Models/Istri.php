@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Istri extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'warganegara',
+        'negara_asal',
+        'paspor',
+        'nik',
+        'nama',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'umur',
+        'status',
+        'agama',
+        'pendidikan',
+        'pekerjaan',
+        'telp',
+        'email',
+        'alamat',
+        'foto',
+        'user_id',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+}
